@@ -36,7 +36,7 @@ server.post("/submit", (req, res) => {
     `);
 });
 
-server.get('/ITC505/lab-7/index.html', (req, res) => {
+server.get('public/ITC505/lab-7/index.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 // Setup static page serving for all the pages in "public"
