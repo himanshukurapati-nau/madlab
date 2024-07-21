@@ -1,0 +1,38 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main  # Adjust branch name as per your main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build
+      run: npm run build  # Adjust build command as per your package.json scripts
+
+    - name: Deploy to Production
+      env:
+        NODE_ENV: production
+        SERVER_URL: ${{ secrets.SERVER_URL }}  # Replace with your server URL
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}  # Example for SSH deploy
+      run: |
+        ssh-agent -s
+        echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+        ssh -o StrictHostKeyChecking=no user@server "cd /path/to/your/app && git pull origin main && npm install && npm run start"
+
+    - name: Notify Deployment
+      run: echo 'Deployment to production completed successfully'
