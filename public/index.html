@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mad Lab</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1>Going to the Mall</h1>
+    <form action="/submit" method="POST">
+      <label for="number1">NUMBER [1] (e.g., 3):</label><br />
+      <input type="text" id="number1" name="number1" /><br /><br />
+
+      <label for="adjective1">ADJECTIVE [2] (e.g., funny):</label><br />
+      <input type="text" id="adjective1" name="adjective1" /><br /><br />
+
+      <label for="name">NAME OF SOMEONE IN THE ROOM [3] (e.g., Emily):</label><br />
+      <input type="text" id="name" name="name" /><br /><br />
+
+      <label for="animals">ANIMAL (PLURAL) [4] (e.g., cats):</label><br />
+      <input type="text" id="animals" name="animals" /><br /><br />
+
+      <label for="nouns1">NOUN (PLURAL) [5] (e.g., books):</label><br />
+      <input type="text" id="nouns1" name="nouns1" /><br /><br />
+
+      <label for="ingVerb">VERB ENDING IN "ING" [6] (e.g., running):</label><br />
+      <input type="text" id="ingVerb" name="ingVerb" /><br /><br />
+
+      <label for="nouns2">NOUN (PLURAL) [7] (e.g., books):</label><br />
+      <input type="text" id="nouns2" name="nouns2" /><br /><br />
+
+      <label for="adjective2">ADJECTIVE [8] (e.g., funny):</label><br />
+      <input type="text" id="adjective2" name="adjective2" /><br /><br />
+
+      <label for="adjective3">ADJECTIVE [9] (e.g., funny):</label><br />
+      <input type="text" id="adjective3" name="adjective3" /><br /><br />
+
+      <label for="noun1">NOUN [10] (e.g., book):</label><br />
+      <input type="text" id="noun1" name="noun1" /><br /><br />
+
+      <label for="location">LOCATION [11] (e.g., park):</label><br />
+      <input type="text" id="location" name="location" /><br /><br />
+
+      <label for="noun2">NOUN [12] (e.g., puppy):</label><br />
+      <input type="text" id="noun2" name="noun2" /><br /><br />
+
+      <input type="submit" value="Submit" />
+    </form>
+    <footer>
+        <p>Last updated: 
+            <span id="lastModified"></span>
+        </p>
+    </footer>
+    <script type="text/javascript">
+         var x = document.lastModified;
+         document.getElementById('lastModified').textContent = x;
+    </script>
+  </body>
+</html>
